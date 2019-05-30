@@ -16,8 +16,9 @@ sample_info = pd.read_csv(config["samples"]).set_index("sample_name", drop=False
 validate(sample_info, schema="./schemas/samples.schema.yaml")
 
 #assemblies and coassemblies to make
-assembly_info = pd.read_csv(config["assemblies"]).set_index("assembly_name")
+assembly_info = pd.read_csv(config["assemblies"]).set_index('assembly_name', drop=False)
 validate(assembly_info, schema="./schemas/assembly.schema.yaml")
+
 #final files for each major step
 rule all:
     input:

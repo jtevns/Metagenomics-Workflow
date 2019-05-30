@@ -1,0 +1,15 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+description: sample info from assembly csv
+properties:
+  assembly_name:
+    type: string
+    description: name to call the resulting assembly
+  samples:
+    type: string
+    description: colon separated list of samples to include in the assembly
+
+required:
+  - assembly_name
+  - samples
+
