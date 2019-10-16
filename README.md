@@ -1,2 +1,2 @@
 # Metagenomics-Workflow
-A workflow for metagenomics using nextflow
+A workflow for metagenomics using snakemake
