@@ -12,8 +12,7 @@ Binning: False
 # any of the above workflows. Change to True
 # to run these steps
 ##########################################
-Merge_lanes: False
-Derep_reads: False
+working_dir: "./"
 
 ##########################################
 # Workflow Params, Each Workflow has Options
@@ -21,12 +20,15 @@ Derep_reads: False
 # filled in below
 ##########################################
 QC_Params:
-  input:
-  seq_type:
-  paired:
+  Merge_lanes: False
+  Derep_reads: False
+  input: ".test/fastqs.csv"
+  extras:
 
 Assembly_params:
   input:
+  extras:
 
 Mapping_params:
-  input:
+  input: "./mapping_input.yaml"
+  extras:

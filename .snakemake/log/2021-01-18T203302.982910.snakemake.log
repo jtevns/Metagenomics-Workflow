@@ -1,0 +1,4 @@
+FileNotFoundError in line 29 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile:
+[Errno 2] No such file or directory: 'map_scheme'
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile", line 29, in <module>
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/scripts/helper_funcs.py", line 2, in get_mapping_outputs

@@ -1,0 +1,4 @@
+NameError in line 63 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/qc.smk:
+name 'sample_info' is not defined
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile", line 11, in <module>
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/qc.smk", line 63, in <module>

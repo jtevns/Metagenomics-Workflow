@@ -1,0 +1,9 @@
+Building DAG of jobs...
+InputFunctionException in line 1 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/map.smk:
+Error:
+  NameError: name 'fastq_info' is not defined
+Wildcards:
+  ref=Dir_name
+  sample=sample1
+Traceback:
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/common.smk", line 21, in get_reads_to_map

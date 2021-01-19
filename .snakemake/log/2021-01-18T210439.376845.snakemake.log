@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in line 1 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/map.smk:
+Wildcards in input files cannot be determined from output files:
+'ind_prefix'

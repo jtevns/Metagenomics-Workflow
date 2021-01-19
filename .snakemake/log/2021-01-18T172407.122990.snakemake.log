@@ -1,0 +1,30 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	bbduk_pe
+	1	find_adapters
+	3
+Select jobs to execute...
+
+[Mon Jan 18 17:24:08 2021]
+rule find_adapters:
+    input: .test/100920_77/36_D3_S77_R1_001.fastq.gz, .test/100920_77/36_D3_S77_R2_001.fastq.gz
+    output: trimmed_reads/sample_77_adapters.fa
+    jobid: 2
+    wildcards: sample=sample_77
+
+[Mon Jan 18 17:24:08 2021]
+Error in rule find_adapters:
+    jobid: 2
+    output: trimmed_reads/sample_77_adapters.fa
+    shell:
+        bbmerge.sh 
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/.snakemake/log/2021-01-18T172407.122990.snakemake.log

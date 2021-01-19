@@ -1,0 +1,3 @@
+SyntaxError in line 14 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/map.smk:
+positional argument follows keyword argument
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile", line 17, in <module>

@@ -1,0 +1,41 @@
+WorkflowError in line 21 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile:
+Error validating row 0 of data frame.
+ValidationError: 'fq1' is a required property
+
+Failed validating 'required' in schema:
+    OrderedDict([('$schema', 'http://json-schema.org/draft-04/schema#'),
+                 ('description', 'sample info from sample tsv'),
+                 ('properties',
+                  OrderedDict([('sample_name',
+                                OrderedDict([('type', 'string'),
+                                             ('description',
+                                              'Sample ID from seq core')])),
+                               ('seq_type',
+                                OrderedDict([('type', 'string'),
+                                             ('description',
+                                              'type of sequence (DNA or '
+                                              'RNA)')])),
+                               ('fq1',
+                                OrderedDict([('type', 'string'),
+                                             ('description',
+                                              'Name of the R1 fastq with '
+                                              'path')])),
+                               ('fq2',
+                                OrderedDict([('type', 'string'),
+                                             ('description',
+                                              'Name of the R2 fastq with '
+                                              'path (not needed se '
+                                              'reads)')]))])),
+                 ('required', ['sample_name', 'seq_type', 'fq1'])])
+
+On instance:
+    {'assembly': '.test/assem/assem.fa',
+     'filtered_assembly': '.test/assem/assem_filtered.fa',
+     'mapping_scheme': '.test/mapping_input.yaml',
+     'qced_fq1': '.test/100920_77/36_D3_S77_R1_001.fastq.gz',
+     'qced_fq2': '.test/100920_77/36_D3_S77_R2_001.fastq.gz',
+     'raw_fq1': '.test/100920_77/36_D3_S77_R1_001.fastq.gz',
+     'raw_fq2': '.test/100920_77/36_D3_S77_R2_001.fastq.gz',
+     'sample_name': 'sample_77',
+     'seq_type': 'dna'}
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile", line 21, in <module>

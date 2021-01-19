@@ -1,0 +1,4 @@
+FileNotFoundError in line 30 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/common.smk:
+[Errno 2] No such file or directory: 'map_scheme'
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile", line 29, in <module>
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/common.smk", line 30, in get_mapping_outputs

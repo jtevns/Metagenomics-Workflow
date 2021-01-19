@@ -1,0 +1,3 @@
+NameError in line 31 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile:
+name 'get_mapping_output' is not defined
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile", line 31, in <module>

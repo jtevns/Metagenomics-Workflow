@@ -1,7 +1,9 @@
-rule megahit:
+# Rules for adapter and quality trimming, dereplication, and interleaving
+rule find_adapters:
     input:
-        get_reads_for_assem
+        unpack(get_assem_read_sets)
     output:
-        "{assem_name}/final.contigs.fa"
+        temp("assemblies/{assembly_name}/final.contigs.fa")
     shell:
-        "megahit"
+        "bbmerge.sh "
+

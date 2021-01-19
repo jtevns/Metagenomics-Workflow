@@ -8,14 +8,14 @@ properties:
   seq_type:
     type: string
     description: type of sequence (DNA or RNA)
-  fq1:
+  raw_fq1:
     type: string
     description: Name of the R1 fastq with path
-  fq2:
+  raw_fq2:
     type: string
     description: Name of the R2 fastq with path (not needed se reads)
 
 required:
   - sample_name
   - seq_type
-  - fq1
+  - raw_fq1

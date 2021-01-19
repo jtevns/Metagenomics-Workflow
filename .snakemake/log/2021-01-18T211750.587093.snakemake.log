@@ -1,0 +1,15 @@
+Building DAG of jobs...
+InputFunctionException in line 20 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/map.smk:
+Error:
+  KeyError: 'Dir_name'
+Wildcards:
+  ref=Dir_name
+Traceback:
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/common.smk", line 26, in get_refs_to_index
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexing.py", line 888, in __getitem__
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexing.py", line 1059, in _getitem_tuple
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexing.py", line 806, in _getitem_lowerdim
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexing.py", line 1123, in _getitem_axis
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexing.py", line 1072, in _get_label
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/generic.py", line 3736, in xs
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3082, in get_loc

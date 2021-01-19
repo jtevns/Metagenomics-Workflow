@@ -1,0 +1,8 @@
+Building DAG of jobs...
+InputFunctionException in line 28 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile:
+Error:
+  NameError: name 'yaml' is not defined
+Wildcards:
+
+Traceback:
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/common.smk", line 23, in get_mapping_outputs

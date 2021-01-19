@@ -1,0 +1,22 @@
+Building DAG of jobs...
+Job counts:
+	count	jobs
+	1	all
+	1	index_ref
+	1	map_pairs
+	3
+
+[Mon Jan 18 21:23:10 2021]
+rule index_ref:
+    input: .test/assem/assem.fa
+    output: sample_77/sample_77.bwt, sample_77/sample_77.amb, sample_77/sample_77.ann, sample_77/sample_77.pac, sample_77/sample_77.sa, sample_77/sample_77.fa
+    jobid: 2
+    wildcards: ref=sample_77
+
+RuleException in line 20 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/map.smk:
+'InputFiles' object has no attribute 'ref_dir'
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 136, in run_jobs
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 145, in run
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 156, in _run
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 176, in printjob
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 162, in printjob

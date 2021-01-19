@@ -1,0 +1,11 @@
+WorkflowError in line 20 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile:
+Error validating row 0 of data frame.
+ValidationError: 77 is not of type 'string'
+
+Failed validating 'type' in schema['properties']['sample_name']:
+    OrderedDict([('type', 'string'),
+                 ('description', 'Sample ID from seq core')])
+
+On instance['sample_name']:
+    77
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile", line 20, in <module>

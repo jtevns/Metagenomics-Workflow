@@ -1,0 +1,3 @@
+NameError in line 18 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile:
+name 'pd' is not defined
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile", line 18, in <module>

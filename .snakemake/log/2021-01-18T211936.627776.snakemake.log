@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 1 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/map.smk:
+Missing input files for rule map_pairs:
+sample_77/sample_77

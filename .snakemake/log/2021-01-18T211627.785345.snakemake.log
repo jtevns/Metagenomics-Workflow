@@ -1,0 +1,8 @@
+Building DAG of jobs...
+InputFunctionException in line 20 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/map.smk:
+Error:
+  AttributeError: 'Wildcards' object has no attribute 'sample'
+Wildcards:
+  ref=Dir_name
+Traceback:
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/common.smk", line 26, in get_refs_to_index

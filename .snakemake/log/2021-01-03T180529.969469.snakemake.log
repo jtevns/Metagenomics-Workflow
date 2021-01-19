@@ -1,0 +1,3 @@
+NameError in line 23 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile:
+name 'sample_info' is not defined
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile", line 23, in <module>

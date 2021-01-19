@@ -1,0 +1,4 @@
+NameError in line 12 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/map.smk:
+name 'ref_dir' is not defined
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile", line 17, in <module>
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/map.smk", line 12, in <module>
