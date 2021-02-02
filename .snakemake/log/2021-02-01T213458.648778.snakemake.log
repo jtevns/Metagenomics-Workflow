@@ -1,0 +1,3 @@
+WorkflowError in line 19 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile:
+Failed to open /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/bin/smk.
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile", line 19, in <module>

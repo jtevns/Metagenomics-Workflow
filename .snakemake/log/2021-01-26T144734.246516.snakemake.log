@@ -1,0 +1,4 @@
+NameError in line 4 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/assemble.smk:
+name 'get_assem_read_sets' is not defined
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile", line 18, in <module>
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/assemble.smk", line 4, in <module>

@@ -1,0 +1,4 @@
+NameError in line 34 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/common.smk:
+name 'map_scheme' is not defined
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile", line 38, in <module>
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/common.smk", line 34, in get_assembly_outputs

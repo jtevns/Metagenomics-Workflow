@@ -3,17 +3,17 @@ rule find_adapters:
     input:
         unpack(get_fastqs)
     output:
-        temp("trimmed_reads/{sample}_adapters.fa")
+        "trimmed_reads/{sample}_adapters.fa"
     shell:
-        "bbmerge.sh "
+        "bbbmerge.sh in={input} outa={output}"
 
 rule bbduk_pe:
     input:
         unpack(get_fastqs),
         adapters = "trimmed_reads/{sample}_adapters.fa"
     output:
-        t1 = temp("trimmed_reads/{sample}_trimmed_R1.fastq"),
-        t2 = temp("trimmed_reads/{sample}_trimmed_R2.fastq")
+        t1 = "trimmed_reads/{sample}_trimmed_R1.fastq",
+        t2 = "trimmed_reads/{sample}_trimmed_R2.fastq"
     shell:
         """
         bbduk in={input.r1} \ #input

@@ -1,0 +1,16 @@
+Building DAG of jobs...
+InputFunctionException in line 2 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/assemble.smk:
+Error:
+  ValueError: operands could not be broadcast together with shapes (0,) (2,) 
+Wildcards:
+  assembly_name=sample_77
+Traceback:
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/common.smk", line 53, in get_reads_for_assem
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/ops/common.py", line 65, in new_method
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/arraylike.py", line 93, in __radd__
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/series.py", line 4959, in _arith_method
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/ops/array_ops.py", line 189, in arithmetic_op
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/ops/array_ops.py", line 142, in _na_arithmetic_op
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/computation/expressions.py", line 235, in evaluate
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/computation/expressions.py", line 69, in _evaluate_standard
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/ops/roperator.py", line 9, in radd

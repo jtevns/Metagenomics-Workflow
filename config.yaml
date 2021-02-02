@@ -20,15 +20,15 @@ working_dir: "./"
 # filled in below
 ##########################################
 QC_Params:
-  Merge_lanes: False
-  Derep_reads: False
-  input: ".test/fastqs.csv"
-  extras:
+  csv_info: ".test/fastqs.csv"
 
 Assembly_params:
-  input:
-  extras:
+  csv_info: ".test/assems.csv"
+  scheme: "assembly_scheme.yaml"
 
 Mapping_params:
-  input: "./mapping_input.yaml"
-  extras:
+  csv_info: ".test/mappings.csv"
+  scheme: "mapping_scheme.yaml"
+
+Binning_params:
+  scheme: "binning_scheme.yaml"

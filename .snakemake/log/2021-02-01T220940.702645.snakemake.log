@@ -1,0 +1,8 @@
+Building DAG of jobs...
+InputFunctionException in line 10 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/bin.smk:
+Error:
+  TypeError: sequence item 0: expected str instance, list found
+Wildcards:
+  assembly=sample_77
+Traceback:
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/common.smk", line 60, in get_bams

@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 31 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/Snakefile:
+Missing input files for rule all:
+sample_77

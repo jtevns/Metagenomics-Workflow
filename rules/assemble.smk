@@ -1,9 +1,16 @@
 # Rules for adapter and quality trimming, dereplication, and interleaving
-rule find_adapters:
+rule assemble:
     input:
-        unpack(get_assem_read_sets)
+        unpack(get_reads_for_assem)
     output:
-        temp("assemblies/{assembly_name}/final.contigs.fa")
+        "assemblies/{assembly_name}/final.contigs.fa"
     shell:
-        "bbmerge.sh "
+        "megahit"
 
+rule assembly_stats:
+    input:
+        "assemblies/{assembly_name}/final.contigs.fa"
+    output:
+        "assemblies/{assembly_name}/assembly_stats.txt"
+    shell:
+        "stats.sh {input} {output}"

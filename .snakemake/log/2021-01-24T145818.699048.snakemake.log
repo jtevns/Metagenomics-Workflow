@@ -1,0 +1,8 @@
+Building DAG of jobs...
+InputFunctionException in line 10 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/qc.smk:
+Error:
+  NameError: name 'raw_fastqs' is not defined
+Wildcards:
+  sample=sample_77
+Traceback:
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/common.smk", line 7, in get_fastqs

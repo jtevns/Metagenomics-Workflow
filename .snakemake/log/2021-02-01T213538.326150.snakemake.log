@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 35 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/bin.smk:
+Missing input files for rule extract_bins:
+binning/sample_77/clustering_merged.csv

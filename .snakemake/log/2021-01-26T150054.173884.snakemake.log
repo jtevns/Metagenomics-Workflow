@@ -1,0 +1,8 @@
+Building DAG of jobs...
+InputFunctionException in line 2 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/assemble.smk:
+Error:
+  NameError: name 'assembly_scheme' is not defined
+Wildcards:
+  assembly_name=sample_77
+Traceback:
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/common.smk", line 46, in get_reads_for_assem

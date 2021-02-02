@@ -1,0 +1,42 @@
+Building DAG of jobs...
+Job counts:
+	count	jobs
+	1	all
+	1	checkm
+	1	concoct
+	1	cut_contigs
+	1	extract_bins
+	1	gen_cov
+	1	merge_clustering
+	7
+
+[Mon Feb  1 22:21:37 2021]
+rule cut_contigs:
+    input: .test/assem/assem.fa
+    output: binning/sample_77/contigs_10K.bed, binning/sample_77/contigs_10K.fa
+    jobid: 5
+    wildcards: assembly=sample_77
+
+
+[Mon Feb  1 22:21:37 2021]
+rule gen_cov:
+    input: mapping/sample_77/sample_77_mapped_sorted.bam, binning/sample_77/contigs_10K.bed
+    output: binning/sample_77/coverage_table.tsv
+    jobid: 6
+    wildcards: assembly=sample_77
+
+
+[Mon Feb  1 22:21:37 2021]
+rule concoct:
+    input: binning/sample_77/contigs_10K.fa, binning/sample_77/coverage_table.tsv
+    output: binning/sample_77/concoct_output/clustering_gt1000.csv
+    jobid: 4
+    wildcards: assembly=sample_77
+
+RuleException in line 1 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/bin.smk:
+NameError: The name 'assembly' is unknown in this context. Did you mean 'wildcards.assembly'?
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 136, in run_jobs
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 145, in run
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 156, in _run
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 176, in printjob
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 162, in printjob

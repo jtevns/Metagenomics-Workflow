@@ -1,0 +1,9 @@
+Building DAG of jobs...
+InputFunctionException in line 10 of /Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/qc.smk:
+Error:
+  AttributeError: 'Series' object has no attribute 'fq1'
+Wildcards:
+  sample=sample_77
+Traceback:
+  File "/Users/jtevans/Documents/Git_Repos/Metagenomics-Workflow/rules/common.smk", line 7, in get_fastqs
+  File "/usr/local/Caskroom/miniconda/base/envs/snakemake/lib/python3.9/site-packages/pandas/core/generic.py", line 5460, in __getattr__
