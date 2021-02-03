@@ -1,19 +1,15 @@
 ######################################
-# Available workflows, change value to
-# true if you want to run that step
+# Available workflows, QC, Assembly,
+# Mapping, Binning . Assign the one you
+# want to run to mode
 ######################################
-QC: True 
-Assembly: False
-Mapping: False
-Binning: False
-
+mode: 
 ##########################################
 # Basic options, These will be run before
 # any of the above workflows. Change to True
 # to run these steps
 ##########################################
 working_dir: "./"
-container: "docker://continuumio/miniconda3:4.4.10"
 
 ##########################################
 # Workflow Params, Each Workflow has Options
