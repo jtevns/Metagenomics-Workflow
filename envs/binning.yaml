@@ -1,0 +1,12 @@
+channels:
+ - bioconda
+ - conda-forge
+ - defaults
+dependencies:
+ - concoct
+ - checkm-genome
+ - samtools
+ - python=3
+ - mkl=2019.4=243
+ - mkl_fft=1.0.12=py37ha843d7b_0
+ - mkl_random=1.0.2=py37hd81dba3_0

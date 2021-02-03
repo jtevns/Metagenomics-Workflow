@@ -3,14 +3,23 @@ rule assemble:
     input:
         unpack(get_reads_for_assem)
     output:
-        "assemblies/{assembly_name}/final.contigs.fa"
+        "assemblies/{assembly_name}/Megahit_meta-sensitive_out/final.contigs.fa"
+    conda:
+        "../envs/megahit.yaml"
+    threads: 36
     shell:
-        "megahit"
+        """
+        megahit -1 {input.r1} -2 {input.r2} -t {threads} --presets meta-sensitive -o assemblies/{wildcards.assembly_name}/Megahit_meta-sensitive_out/tmp/
+        mv assemblies/{wildcards.assembly_name}/Megahit_meta-sensitive_out/tmp/* assemblies/{wildcards.assembly_name}/Megahit_meta-sensitive_out/
+        rm -rf assemblies/{wildcards.assembly_name}/Megahit_meta-sensitive_out/tmp/
+        """
 
 rule assembly_stats:
     input:
-        "assemblies/{assembly_name}/final.contigs.fa"
+        "assemblies/{assembly_name}/Megahit_meta-sensitive_out/final.contigs.fa"
     output:
         "assemblies/{assembly_name}/assembly_stats.txt"
+    conda:
+        "../envs/bbmap.yaml"
     shell:
-        "stats.sh {input} {output}"
+        "stats.sh {input} > {output}"

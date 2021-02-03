@@ -10,7 +10,7 @@ from snakemake.utils import validate
 
 #config file to use
 configfile: "config.yaml"
-
+container: "docker://continuumio/miniconda3:4.4.10"
 # include workflows 
 include: "rules/common.smk"
 include: "rules/qc.smk"
@@ -36,10 +36,10 @@ mapping_info = pd.read_csv(config["Mapping_Params"]["csv_info"]).set_index("ref"
 rule all:
     input:
         #return a list of final outputs based on config input for mapping
-        #get_mapping_outputs(config["Mapping_params"]["input"])
+        #get_mapping_outputs(config["Mapping_Params"]["scheme"])
         # qc
-        #expand("trimmed_reads/{sample}_trimmed_{read}.fastq", sample=fastq_info.sample_name,read=["R1","R2"])
+        #expand("trimmed_reads/{sample}/{sample}_trimmed_{read}.fastq", sample=fastq_info.sample_name,read=["R1","R2"])
         # assembly
-        #get_assembly_outputs(config["Mapping_params"]["input"])
+        #get_assembly_outputs(config["Assembly_Params"]["scheme"])
         # binning
-        get_binning_output(config["Binning_params"]["input"])
+         get_binning_output(config["Binning_Params"]["scheme"])
