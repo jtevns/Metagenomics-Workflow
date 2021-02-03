@@ -1,0 +1,6 @@
+sample_name,raw_fq1,raw_fq2,qced_fq1,qced_fq2
+sample_77,raw_reads/100920_77/36_D3_S77_R1_001.fastq.gz,raw_reads/100920_77/36_D3_S77_R2_001.fastq.gz,trimmed_reads/sample_77/sample_77_trimmed_R1.fastq,trimmed_reads/sample_77/sample_77_trimmed_R2.fastq
+sample_78,raw_reads/100920_78/30_D3_S78_R1_001.fastq.gz,raw_reads/100920_78/30_D3_S78_R2_001.fastq.gz,trimmed_reads/sample_78/sample_78_trimmed_R1.fastq,trimmed_reads/sample_78/sample_78_trimmed_R2.fastq
+sample_79,raw_reads/100920_79/31_D3_S79_R1_001.fastq.gz,raw_reads/100920_79/31_D3_S79_R2_001.fastq.gz,trimmed_reads/sample_79/sample_79_trimmed_R1.fastq,trimmed_reads/sample_79/sample_79_trimmed_R2.fastq
+sample_80,raw_reads/100920_80/7_D31_S80_R1_001.fastq.gz,raw_reads/100920_80/7_D31_S80_R2_001.fastq.gz,trimmed_reads/sample_80/sample_80_trimmed_R1.fastq,trimmed_reads/sample_80/sample_80_trimmed_R2.fastq
+sample_81,raw_reads/100920_81/28_D31_S81_R1_001.fastq.gz,raw_reads/100920_81/28_D31_S81_R2_001.fastq.gz,trimmed_reads/sample_81/sample_81_trimmed_R1.fastq,trimmed_reads/sample_81/sample_81_trimmed_R2.fastq
