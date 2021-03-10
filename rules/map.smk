@@ -14,10 +14,11 @@ rule map_pairs:
         "mapping/{ref}/{sample}_mapped_sorted.bam"
     conda:
         "../envs/mapping.yaml"
-    threads: 10
+    resources: 
+        cpus=20, mem_gb=32
     shell:
         """
-        bwa mem {input.index} {input.r1} {input.r2} | samtools sort -o {output} -
+        bwa mem {input.index} {input.r1} {input.r2} -t 10  | samtools sort -o {output} -@ 10 -
         """
 rule index_bam:
     input:
@@ -26,6 +27,8 @@ rule index_bam:
          "mapping/{ref}/{sample}_mapped_sorted.bam.bai"
     conda:
         "../envs/mapping.yaml"
+    resources: 
+        cpus=1, mem_gb=32
     shell:
         "samtools index {input}"
 
@@ -43,7 +46,8 @@ rule index_ref:
         "mapping/{ref}/{ref}.fa"
     conda:
         "../envs/mapping.yaml"
-    threads: 10
+    resources: 
+        cpus=1, mem_gb=32
     shell:
         """
         mkdir -p mapping/{wildcards.ref}

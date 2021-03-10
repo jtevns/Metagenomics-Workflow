@@ -6,9 +6,10 @@ rule concoct:
         "binning/{assembly}/concoct_output/clustering_gt1000.csv"
     conda:
         "../envs/binning.yaml"
-    threads: 36
+    resources: 
+        cpus=36, mem_gb=180
     shell:
-        "concoct --composition_file {input.comp} --coverage_file {input.cov} -b binning/{wildcards.assembly}/concoct_output/ -t {threads}"
+        "concoct --composition_file {input.comp} --coverage_file {input.cov} -b binning/{wildcards.assembly}/concoct_output/ -t 36"
 
 rule gen_cov:
     input:
@@ -17,6 +18,8 @@ rule gen_cov:
         "binning/{assembly}/coverage_table.tsv"
     conda:
         "../envs/binning.yaml"
+    resources: 
+        cpus=1, mem_gb=64
     shell:
         "python Metagenomics-Workflow/scripts/concoct_coverage_table.py binning/{wildcards.assembly}/contigs_10K.bed {input} > {output}"
 
@@ -28,6 +31,8 @@ rule cut_contigs:
         fasta = "binning/{assembly}/contigs_10K.fa"
     conda:
         "../envs/binning.yaml"
+    resources: 
+        cpus=1, mem_gb=8
     shell:
         "python Metagenomics-Workflow/scripts/cut_up_fasta.py {input} -c 10000 -o 0 --merge_last -b {output.bed} > {output.fasta}"
 
@@ -38,6 +43,8 @@ rule merge_clustering:
         "binning/{assembly}/concoct_output/clustering_merged.csv"
     conda:
         "../envs/binning.yaml"
+    resources: 
+        cpus=1, mem_gb=8
     shell:
         "python Metagenomics-Workflow/scripts/merge_cutup_clustering.py {input} > {output}"
 
@@ -49,6 +56,8 @@ rule extract_bins:
         touch("binning/{assembly}/bin_fasta_extraction.done")
     conda:
         "../envs/binning.yaml"
+    resources: 
+        cpus=1, mem_gb=8
     shell:
        """
        mkdir binning/{wildcards.assembly}/concoct_output/fasta_bins
@@ -62,6 +71,7 @@ rule checkm:
         "binning/{assembly}/binstats.tsv"
     conda:
         "../envs/binning.yaml"
-    threads: 36
+    resources: 
+        cpus=36, mem_gb=180
     shell:
-        "checkm lineage_wf binning/{wildcards.assembly}/concoct_output/fasta_bins/ binning/{wildcards.assembly}/checkm/ -x fa --tab_table -t {threads} --pplacer_threads {threads} -f {output}"
+        "checkm lineage_wf binning/{wildcards.assembly}/concoct_output/fasta_bins/ binning/{wildcards.assembly}/checkm/ -x fa --tab_table -t 36 --pplacer_threads 36 -f {output}"

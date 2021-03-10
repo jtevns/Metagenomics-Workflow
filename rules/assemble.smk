@@ -1,3 +1,4 @@
+localrules: assembly_stats
 # Rules for adapter and quality trimming, dereplication, and interleaving
 rule assemble:
     input:
@@ -6,10 +7,11 @@ rule assemble:
         "assemblies/{assembly_name}/Megahit_meta-sensitive_out/final.contigs.fa"
     conda:
         "../envs/megahit.yaml"
-    threads: 36
+    resources: 
+        cpus=36, mem_gb=180
     shell:
         """
-        megahit -1 {input.r1} -2 {input.r2} -t {threads} --presets meta-sensitive -o assemblies/{wildcards.assembly_name}/Megahit_meta-sensitive_out/tmp/
+        megahit -1 {input.r1} -2 {input.r2} -t {resources.cpus} --presets meta-sensitive -o assemblies/{wildcards.assembly_name}/Megahit_meta-sensitive_out/tmp/
         mv assemblies/{wildcards.assembly_name}/Megahit_meta-sensitive_out/tmp/* assemblies/{wildcards.assembly_name}/Megahit_meta-sensitive_out/
         rm -rf assemblies/{wildcards.assembly_name}/Megahit_meta-sensitive_out/tmp/
         """
