@@ -4,7 +4,7 @@
 # Change mode: to the above value you
 # want to run
 ######################################
-mode:
+mode: "Assembly"
 
 ##########################################
 # Basic options, These will be run before
@@ -13,6 +13,18 @@ mode:
 ##########################################
 working_dir: "./"
 
+##########################################
+# Absolute paths to singularity containers
+# Labeled for each software used by the
+# workflow
+##########################################
+singularity:
+ bbtools: "/nfs/turbo/lsa-dudelabs/containers/bbtools/bbtools.sif"
+ bwa: "/nfs/turbo/lsa-dudelabs/containers/bwa/bwa.sif" #includes samtools in container
+ checkm: "/nfs/turbo/lsa-dudelabs/containers/checkm/checkm.sif"
+ concoct: "/nfs/turbo/lsa-dudelabs/containers/concoct/concoct_v1.1.0.sif"
+ fastqc: "/nfs/turbo/lsa-dudelabs/containers/fastqc/fastqc.sif"
+ megahit: "/nfs/turbo/lsa-dudelabs/containers/Megahit/megahit.sif"
 
 ##########################################
 # Workflow Params, Each Workflow has Options

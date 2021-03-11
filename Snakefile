@@ -6,11 +6,11 @@
 #####################################################
 import pandas as pd
 import yaml
-from snakemake.utils import validate
+#from snakemake.utils import validate
 
 #config file to use
 configfile: "config.yaml"
-container: "docker://continuumio/miniconda3:4.4.10"
+#container: "docker://continuumio/miniconda3:4.4.10"
 # include workflows 
 include: "rules/common.smk"
 include: "rules/qc.smk"

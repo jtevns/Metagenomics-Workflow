@@ -9,6 +9,8 @@ rule assemble:
         "../envs/megahit.yaml"
     resources: 
         cpus=36, mem_gb=180
+    singularity:
+        config['singularity']['megahit']
     shell:
         """
         megahit -1 {input.r1} -2 {input.r2} -t {resources.cpus} --presets meta-sensitive -o assemblies/{wildcards.assembly_name}/Megahit_meta-sensitive_out/tmp/
@@ -23,5 +25,7 @@ rule assembly_stats:
         "assemblies/{assembly_name}/assembly_stats.txt"
     conda:
         "../envs/bbmap.yaml"
+    singularity:
+        config['singularity']['bbtools']
     shell:
         "stats.sh {input} > {output}"

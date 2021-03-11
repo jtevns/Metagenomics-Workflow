@@ -16,6 +16,8 @@ rule map_pairs:
         "../envs/mapping.yaml"
     resources: 
         cpus=20, mem_gb=32
+    singularity:
+        config['singularity']['bwa']
     shell:
         """
         bwa mem {input.index} {input.r1} {input.r2} -t 10  | samtools sort -o {output} -@ 10 -
@@ -29,6 +31,8 @@ rule index_bam:
         "../envs/mapping.yaml"
     resources: 
         cpus=1, mem_gb=32
+    singularity:
+        config['singularity']['bwa']
     shell:
         "samtools index {input}"
 
@@ -48,6 +52,8 @@ rule index_ref:
         "../envs/mapping.yaml"
     resources: 
         cpus=1, mem_gb=32
+    singularity:
+        config['singularity']['bwa']
     shell:
         """
         mkdir -p mapping/{wildcards.ref}

@@ -8,6 +8,8 @@ rule concoct:
         "../envs/binning.yaml"
     resources: 
         cpus=36, mem_gb=180
+    singularity:
+        config['singularity']['concoct']
     shell:
         "concoct --composition_file {input.comp} --coverage_file {input.cov} -b binning/{wildcards.assembly}/concoct_output/ -t 36"
 
@@ -18,6 +20,8 @@ rule gen_cov:
         "binning/{assembly}/coverage_table.tsv"
     conda:
         "../envs/binning.yaml"
+    singularity:
+        config['singularity']['concoct']
     resources: 
         cpus=1, mem_gb=64
     shell:
@@ -33,6 +37,8 @@ rule cut_contigs:
         "../envs/binning.yaml"
     resources: 
         cpus=1, mem_gb=8
+    singularity:
+        config['singularity']['concoct']
     shell:
         "python Metagenomics-Workflow/scripts/cut_up_fasta.py {input} -c 10000 -o 0 --merge_last -b {output.bed} > {output.fasta}"
 
@@ -45,6 +51,8 @@ rule merge_clustering:
         "../envs/binning.yaml"
     resources: 
         cpus=1, mem_gb=8
+    singularity:
+        config['singularity']['concoct']
     shell:
         "python Metagenomics-Workflow/scripts/merge_cutup_clustering.py {input} > {output}"
 
@@ -58,6 +66,8 @@ rule extract_bins:
         "../envs/binning.yaml"
     resources: 
         cpus=1, mem_gb=8
+    singularity:
+        config['singularity']['concoct']
     shell:
        """
        mkdir binning/{wildcards.assembly}/concoct_output/fasta_bins
@@ -73,5 +83,7 @@ rule checkm:
         "../envs/binning.yaml"
     resources: 
         cpus=36, mem_gb=180
+    singularity:
+        config['singularity']['checkm']
     shell:
         "checkm lineage_wf binning/{wildcards.assembly}/concoct_output/fasta_bins/ binning/{wildcards.assembly}/checkm/ -x fa --tab_table -t 36 --pplacer_threads 36 -f {output}"
